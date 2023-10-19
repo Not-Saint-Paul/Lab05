@@ -1,26 +1,23 @@
 /************************************
  * Автор: Станковский П.А.          *
- * Дата: 18.10.2023                 *
- * Название: Shitcode Lab5 v1       *
- * https://onlinegdb.com/L6zPg2s2s  *
+ * Дата: 19.10.2023                 *
+ * Название: Shitcode Lab5 v1.1     *
+ * https://onlinegdb.com/WLLgbCG5F- *
  ************************************/
-
 #include <iostream>
 #include <math.h>
 using namespace std;
 
 int main() {
-    int i, n, sumOfEvenOrdinalNumbers, sumOfOddOrdinalNumbers;
-    int T[n];
-    
-    for (i = 0; i < n; ++i) {
-        if (i % 2 == 0) {
-            sumOfOddOrdinalNumbers += T[i];
+    int ai, en = 6, sumOfEvenOrdinalNumbers, sumOfOddOrdinalNumbers;
+    int T[en] = {1, 2, 1, 2, 1, 2};
+    for (ai = 0; ai < en; ++ai) {
+        if (ai % 2 == 0) {
+            sumOfOddOrdinalNumbers += T[ai];
         } else {
-            sumOfEvenOrdinalNumbers += T[i];
+            sumOfEvenOrdinalNumbers += T[ai];
         }
     }
-    
     cout << "Сумма чисел с чётными порядковыми номерами равна " << sumOfEvenOrdinalNumbers << endl
     << "Сумма чисел с нечётными порядковыми номерами равна " << sumOfOddOrdinalNumbers << endl;
 
