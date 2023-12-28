@@ -1,25 +1,34 @@
-/************************************
- * Автор: Станковский П.А.          *
- * Дата: 19.10.2023                 *
- * Название: Shitcode Lab5 v1.1     *
- * https://onlinegdb.com/WLLgbCG5F- *
- ************************************/
+/****************************************
+ * Автор: Станковский П.А.              *
+ * Дата: 28.12.2023                     *
+ * Shitcode Lab5 v2 Christmas Update    *
+ * https://onlinegdb.com/n10jOfmY-      *
+ ****************************************/
 #include <iostream>
 #include <math.h>
 using namespace std;
 
-int main() {
-    int ai, en = 6, sumOfEvenOrdinalNumbers, sumOfOddOrdinalNumbers;
-    int T[en] = {1, 2, 1, 2, 1, 2};
-    for (ai = 0; ai < en; ++ai) {
-        if (ai % 2 == 0) {
-            sumOfOddOrdinalNumbers += T[ai];
-        } else {
-            sumOfEvenOrdinalNumbers += T[ai];
-        }
+int SumOfNThOrdinalNumbers(int array[], int length, int numberOfStartIndex) {
+
+    int result = 0, internalDigit;
+
+    for (internalDigit = numberOfStartIndex; internalDigit < length; internalDigit += 2) {
+        result += array[internalDigit];
     }
-    cout << "Сумма чисел с чётными порядковыми номерами равна " << sumOfEvenOrdinalNumbers << endl
-    << "Сумма чисел с нечётными порядковыми номерами равна " << sumOfOddOrdinalNumbers << endl;
+
+    return result;
+}
+
+int main() {
+
+  int mainArray[] = {1, 2, 1, 2, 1, 2};
+
+    cout << "Сумма чисел с чётными порядковыми номерами равна ";
+    cout << SumOfNThOrdinalNumbers(mainArray, 6, 1);
+    cout << endl
+    << "Сумма чисел с нечётными порядковыми номерами равна ";
+    cout << SumOfNThOrdinalNumbers(mainArray, 6, 0);
+    cout << endl;
 
     return 0;
 }
